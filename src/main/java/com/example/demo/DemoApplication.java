@@ -18,10 +18,10 @@ public class DemoApplication {
 class HelloWorldController {
   @GetMapping("/")
   public String hello() {
-    return "https://javas-396717.uc.r.appspot.com java-app";
+    return "git hub changed";
   }
   @GetMapping("/s")
   public String hellos() {
-    return "sssssssssss https://javas-396717.uc.r.appspot.com  java-app 23";
+    return "git hub changed git hub changed git hub changed";
   }
 }
