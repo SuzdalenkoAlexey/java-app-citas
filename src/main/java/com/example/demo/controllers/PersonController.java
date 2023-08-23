@@ -8,4 +8,9 @@ public class PersonController {
         return "get or create";
     }
 
+    @GetMapping("get_all_users")
+    public String getAllUsers(){
+        return "get all users";
+    }
+
 }
