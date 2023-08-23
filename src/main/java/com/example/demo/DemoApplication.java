@@ -11,6 +11,8 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
     ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+    CalculatorService calculatorService = (CalculatorService) context.getBean("calculatorService");
+    System.out.println(CalculatorService.miFunc());
 
 		SpringApplication.run(DemoApplication.class, args);
 	}
@@ -32,6 +34,8 @@ class HelloWorldController {
   @GetMapping("/")
   public String hello() {
     System.out.println("Hello "+ ++i);
+    System.out.println(CalculatorService.miFunc());
+
     return "index page new "+i;
   }
   @GetMapping("/s")
@@ -42,6 +46,8 @@ class HelloWorldController {
 
 
 class CalculatorService {
+    public CalculatorService() {}
+
     public static final String miFunc(){
       return "ok";
     }
