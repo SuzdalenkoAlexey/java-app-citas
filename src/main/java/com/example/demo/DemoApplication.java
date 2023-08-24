@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-   ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
     /*
      * crear un objeto de forma normal
@@ -24,15 +24,19 @@ public class DemoApplication {
     /*
      * crear (pedir) mi ojeto ha Spring
      */
-     CalculatorService calculatorService = (CalculatorService) context.getBean("calculatorService");
-     GestorFacturas gestorFacturas = (GestorFacturas) context.getBean("gestroFacturas");
-     gestorFacturas.calculatorService.miFunc();
-
-     Calculator calculator = (Calculator) context.getBean("calculator");
+    CalculatorService calculatorService = (CalculatorService) context.getBean("calculatorService");
+    GestorFacturas gestorFacturas = (GestorFacturas) context.getBean("gestroFacturas");
+    gestorFacturas.calculatorService.miFunc();
+    Calculator calculator = (Calculator) context.getBean("calculator");
 
 		SpringApplication.run(DemoApplication.class, args);
-	}
 
+    /*
+     * SECOND APPLICATION
+     */
+
+    
+	}
 }
 
 
