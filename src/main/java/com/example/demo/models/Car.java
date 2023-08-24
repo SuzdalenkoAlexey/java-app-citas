@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+@Entity
 public class Car {
     // atributos
     private Long id;
