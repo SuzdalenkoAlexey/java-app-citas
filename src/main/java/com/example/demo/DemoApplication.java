@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.utils.Calculator;
 import com.example.demo.utils.CalculatorService;
 import com.example.demo.utils.GestorFacturas;
 import org.springframework.boot.SpringApplication;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+   ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
     /*
      * crear un objeto de forma normal
@@ -23,9 +24,11 @@ public class DemoApplication {
     /*
      * crear (pedir) mi ojeto ha Spring
      */
-    CalculatorService calculatorService = (CalculatorService) context.getBean("calculatorService");
-    GestorFacturas gestorFacturas = (GestorFacturas) context.getBean("gestroFacturas");
-    gestorFacturas.calculatorService.miFunc();
+     CalculatorService calculatorService = (CalculatorService) context.getBean("calculatorService");
+     GestorFacturas gestorFacturas = (GestorFacturas) context.getBean("gestroFacturas");
+     gestorFacturas.calculatorService.miFunc();
+
+     Calculator calculator = (Calculator) context.getBean("calculator");
 
 		SpringApplication.run(DemoApplication.class, args);
 	}
@@ -33,27 +36,9 @@ public class DemoApplication {
 }
 
 
-@RestController
-class HelloWorldController {
-  int i = 0;
-
-  @GetMapping("/")
-  public String hello() {
-    System.out.println("Hello "+ ++i);
-
-    return "index page new "+i;
-  }
-  @GetMapping("/s")
-  public String hellos() {
-    return "git hub changed git hub changed git hub changed";
-  }
-}
 
 
-
-
-
-/*                                                                  https://youtu.be/kWJJyvre5EQ?list=PLkVpKYNT_U9fGwrf_rVl-t_yjnixdsK6E
+/*                                                                  
   https://javas-396717.uc.r.appspot.com 
   mysql data base id = mysqlcitas
             password = svoboda2019

@@ -8,9 +8,13 @@
         <property name="name" value="value for name"></property>
     </bean>
 
+    <!-- para auto scaneo de todos los beans @Component -->
+    <context:annotation-config/>
+    <context:component-scan base-package="com.example"/>
 </beans>
 
 <!--
+    
     singleton -> sole se crea in objeto para toda las applicacion
     prototype -> se crea un objeto cada vez quue se llame context.getBean()
 -->
